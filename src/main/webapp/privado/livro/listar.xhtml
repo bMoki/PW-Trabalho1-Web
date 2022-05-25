@@ -17,13 +17,13 @@
                                  oncomplete="PF('dlg').show();"/>
                 <p:dataTable value="#{controleLivro.dao.listaObjetos}" var="obj" id="listagem">
                     <p:column headerText="ISBN">
-                        <p:outputLabel value="#{obg.isbn}"/>
+                        <p:outputLabel value="#{obj.isbn}"/>
                     </p:column>
                     <p:column headerText="Titulo">
-                        <p:outputLabel value="#{obg.titulo}"/>
+                        <p:outputLabel value="#{obj.titulo}"/>
                     </p:column>
                     <p:column headerText="Valor">
-                        <p:outputLabel value="#{obg.valor}"/>
+                        <p:outputLabel value="#{obj.valor}"/>
                     </p:column>
                      <p:column headerText="Ações">
                          <div align="center">
