@@ -41,7 +41,7 @@
                         <p:outputLabel value="#{obj.numeroPaginas}"/>
                     </p:column>
                      <p:column headerText="Ativo">
-                        <p:outputLabel value="#{obj.ativo}"/>
+                        <p:outputLabel value="#{obj.ativo ? 'Sim' : 'Não'}"/>
                     </p:column>
                      <p:column headerText="Data cadastro">
                         <p:outputLabel value="#{obj.dataCadastro}">
