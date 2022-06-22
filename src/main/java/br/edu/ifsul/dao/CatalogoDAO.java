@@ -17,4 +17,10 @@ public class CatalogoDAO<TIPO> extends DAOGenerico<Catalogo> implements Serializ
         converterOrdem.setListaOrdem(listaOrdem);
     }
     
+    public Catalogo getObjectByID(Object id) throws Exception {
+        Catalogo obj = em.find(Catalogo.class, id);
+        obj.getLivros().size();
+        return obj;
+    }
+    
 }

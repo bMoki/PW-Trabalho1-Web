@@ -5,6 +5,7 @@ br\edu\ifsul\controle\ControleLivro.class
 br\edu\ifsul\converters\ConverterIdioma.class
 br\edu\ifsul\dao\CatalogoDAO.class
 br\edu\ifsul\util\Util.class
+br\edu\ifsul\controle\ControleICatalogo.class
 br\edu\ifsul\converters\ConverterOrdem.class
 br\edu\ifsul\controle\ControleAutor.class
 br\edu\ifsul\controle\ControleIFormato.class
