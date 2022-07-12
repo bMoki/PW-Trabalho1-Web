@@ -15,7 +15,8 @@
                                  icon="pi pi-plus"
                                  update="formEdicao"
                                  process="@this"
-                                 oncomplete="PF('dlg').show();"/>
+                                 oncomplete="PF('dlg').show();"
+                                 rendered="#{controleLogin.hasPermissao('REGISTRAR')or controleLogin.hasPermissao('ADMINISTRADOR')}"/>
                 <div align="center">
                     <p:panelGrid columns="11">
                         <p:outputLabel value="Ordem:"/>
@@ -66,19 +67,21 @@
                     <p:column headerText="Sigla">
                         <p:outputLabel value="#{obj.sigla}"/>
                     </p:column>
-                     <p:column headerText="Ações">
+                    <p:column headerText="Ações" rendered="#{controleLogin.hasPermissao('ALTERAR') or controleLogin.hasPermissao('DELETAR')or controleLogin.hasPermissao('ADMINISTRADOR')}">
                          <div align="center">
                              <p:commandButton actionListener="#{controleIdioma.alterar(obj.id)}"
                                               icon="pi pi-pencil"
                                               title="Editar"
                                               update="formEdicao"
                                               process="@this"
+                                              rendered="#{controleLogin.hasPermissao('ALTERAR')or controleLogin.hasPermissao('ADMINISTRADOR')}"
                                               oncomplete="PF('dlg').show();"/>
                              <p:commandButton actionListener="#{controleIdioma.excluir(obj.id)}"
                                               icon="pi pi-trash"
                                               title="Remover"
                                               update="@form"
                                               process="@this"
+                                              rendered="#{controleLogin.hasPermissao('DELETAR')or controleLogin.hasPermissao('ADMINISTRADOR')}"
                                               onclick="if(!confirm('Confirma a exclusão')) return false"/>
                          </div>
                     </p:column>

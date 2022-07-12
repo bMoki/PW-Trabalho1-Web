@@ -1,9 +1,11 @@
 package br.edu.ifsul.controle;
 
+import br.edu.ifsul.dao.AutorDAO;
 import br.edu.ifsul.dao.CatalogoDAO;
 import br.edu.ifsul.dao.FormatoDAO;
 import br.edu.ifsul.dao.IdiomaDAO;
 import br.edu.ifsul.dao.LivroDAO;
+import br.edu.ifsul.modelo.Autor;
 import br.edu.ifsul.modelo.Catalogo;
 import br.edu.ifsul.modelo.Formato;
 import br.edu.ifsul.modelo.Idioma;
@@ -31,8 +33,28 @@ public class ControleLivro implements Serializable{
     
     @EJB
     private CatalogoDAO<Catalogo> daoCatalogo;
+    
+    @EJB
+    private AutorDAO<Autor> daoAutor;
+    private Autor autor;
+    private int abaAtiva;
 
     public ControleLivro() {
+    }
+    
+    public void removerAutor(Autor obj) {
+        objeto.getAutores().remove(obj);
+        Util.mensagemInformacao("Autor removido com sucesso!");
+    }
+    
+    public void adicionarAutor() {
+        System.out.println("Chamou metodo");
+        if (!objeto.getAutores().contains(autor)) {
+            objeto.getAutores().add(autor);
+            Util.mensagemInformacao("Autor adicionado com sucesso!");
+        } else {
+            Util.mensagemErro("Livro já possui este autor");
+        }
     }
 
     public String listar(){
@@ -115,6 +137,31 @@ public class ControleLivro implements Serializable{
     public void setObjeto(Livro objeto) {
         this.objeto = objeto;
     }
+
+    public AutorDAO<Autor> getDaoAutor() {
+        return daoAutor;
+    }
+
+    public void setDaoAutor(AutorDAO<Autor> daoAutor) {
+        this.daoAutor = daoAutor;
+    }
+
+    public int getAbaAtiva() {
+        return abaAtiva;
+    }
+
+    public void setAbaAtiva(int abaAtiva) {
+        this.abaAtiva = abaAtiva;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+    
     
     
 }
