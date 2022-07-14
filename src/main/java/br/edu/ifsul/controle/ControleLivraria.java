@@ -36,14 +36,14 @@ public class ControleLivraria implements Serializable{
     
     public void salvarCatalogo(){
         if(novoCatalogo){
-            objeto.getCatalogos().add(catalogo);
+            objeto.adicionarCatalogo(catalogo);
         }
-        Util.mensagemInformacao("Livro adicionado ou alterado com sucesso!");
+        Util.mensagemInformacao("Catalogo adicionado ou alterado com sucesso!");
     }
     
     public void removerCatalogo(int index){
-        objeto.getCatalogos().remove(index);
-        Util.mensagemInformacao("Jogador removido com sucesso!");
+        objeto.removerCatalogo(index);
+        Util.mensagemInformacao("Catalogo removido com sucesso!");
     }
     
     public String listar(){
